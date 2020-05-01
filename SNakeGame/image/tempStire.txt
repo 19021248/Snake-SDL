@@ -1,0 +1,41 @@
+				direction next = bodyLocation[i - 1].getDir(), after = bodyLocation[i + 1].getDir();
+
+				if (next == UP && after == LEFT)
+				{
+					turn.render(bodyLocation[i].getX(), bodyLocation[i].getY(),0);
+				}
+				else
+				if (next == LEFT && after == DOWN) 
+				{
+					turn.render(bodyLocation[i].getX(), bodyLocation[i].getY(), -90);
+				}
+				else
+				if (next == DOWN && after == RIGHT) 
+				{
+					turn.render(bodyLocation[i].getX(), bodyLocation[i].getY(), -180);
+				}
+				else
+				if (next == RIGHT && after == UP)
+				{
+					turn.render(bodyLocation[i].getX(), bodyLocation[i].getY(), -270);
+				}
+				else
+				if (after == UP && next == LEFT)
+				{
+					turn.render(bodyLocation[i].getX(), bodyLocation[i].getY(), -180);
+				}
+				else
+				if (after == LEFT && next == DOWN)
+				{
+					turn.render(bodyLocation[i].getX(), bodyLocation[i].getY(), -90);
+				}
+				else
+				if (after == DOWN && next == RIGHT)
+				{
+					turn.render(bodyLocation[i].getX(), bodyLocation[i].getY(), -180);
+				}
+				else
+				if (after == RIGHT && next == UP) {
+				turn.render(bodyLocation[i].getX(), bodyLocation[i].getY(), 90);
+				}
+				else
