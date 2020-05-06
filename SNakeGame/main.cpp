@@ -1,4 +1,4 @@
-﻿#include <string>
+#include <string>
 #include <math.h>
 #include <SDL.h>
 #include <SDL_image.h>
@@ -224,7 +224,7 @@ public:
 
 		}
 	}
-	/*void snakeBodyArrange() // cho thẳng ra ( thân đầu đuôi .. )
+	void snakeBodyArrange() // cho thẳng ra ( thân đầu đuôi .. )
 	{
 		death = false;
 		bodyLocation[0].setXY(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
@@ -234,7 +234,7 @@ public:
 			int xTemp = 0, yTemp = 0;
 			switch (bodyLocation[i].getDir())
 			{
-			
+
 			case UP:
 				yTemp = size;
 				break;
@@ -255,10 +255,11 @@ public:
 			yTemp += bodyLocation[i - 1].getY();
 			bodyLocation[i].setDir(UP);
 			bodyLocation[i].setXY(xTemp, yTemp);
-			
+
 		}
+	}
 	
-	*/
+	
 	void snakeRender() { // chỉnh hướng cho đầu t hân đít
 		for (int i = 0; i < numberOfSegment; i++)
 		{
@@ -350,7 +351,7 @@ int main(int argc, char* args[])
 		loadFile();
 		bool quit = false;
 		SDL_Event e;
-	//	mainSnake.snakeBodyArrange();
+		mainSnake.snakeBodyArrange();
 
 		while (!quit)
 		{
@@ -421,7 +422,7 @@ void startGame()
 {
 	if (started == false)
 	{
-		//mainSnake.snakeBodyArrange();
+	    mainSnake.snakeBodyArrange();
 		printf("game started");
 		score = 0;
 		started = true;
@@ -489,6 +490,3 @@ bool init()
 
 	return success;
 }
-
-
-
