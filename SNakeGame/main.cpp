@@ -28,15 +28,13 @@ Texture scoreBackground;
 Texture startMenu;
 Texture loseMenu;
 
-class Fruit : public MapThing
-{
+class Fruit : public MapThing{
 public:
 	Mix_Chunk *eatSound;
 	Texture texture;
 	int scoreGain = 100;
 	bool firstTime = true;
-	void load()
-	{
+	void load(){
 		texture.loadFromFile("image/food.png");
 		eatSound = Mix_LoadWAV("sound/food.wav");
 	}
@@ -61,8 +59,7 @@ Fruit fruits[4];
 Map map;
 
 
-class Snake
-{
+class Snake{
 private:
 	int bodyWidth, bodyHeight, numberOfSegment = 4;
 	int size = mapPixel, movingFrame = 0, eatCounter = 0;;
@@ -138,7 +135,6 @@ public:
 					int afterX, afterY;
 					if (i == 0) // chỉnh hướng cho đầu
 					{
-						//	printf("%d %d\n", bodyLocation[i].getX() % mapPixel, bodyLocation[i].getY() % mapPixel);
 						switch (inputDir)
 						{
 						case UP:
@@ -228,6 +224,10 @@ public:
 	{
 		death = false;
 		bodyLocation[0].setXY(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+		for (int i = 1; i < numberOfSegment; i++)
+		{
+			bodyLocation[i].resetPos();
+		}
 		numberOfSegment = 4;
 		for (int i = 1; i < numberOfSegment; i++)
 		{
@@ -372,11 +372,10 @@ int main(int argc, char* args[])
 			}
 
 			if (started)
-			mainSnake.snakeBodyControl(e); // 
+			mainSnake.snakeBodyControl(e); 
 
-			 //SDL_RenderClear(renderer); // xóa cái space
-
-			map.mapRender(); // truyển ảnh m ap
+			 SDL_RenderClear(renderer); 
+			map.mapRender(); 
 
 
 			for (int i = 0; i < 4; i++)
@@ -384,7 +383,6 @@ int main(int argc, char* args[])
 				fruits[i].fruitRender();
 			}
 			mainSnake.snakeRender(); // hiển thị rắn
-
 			if (started)
 			{
 				scoreBackground.render(0, 0);
