@@ -9,8 +9,8 @@ enum direction{
 };
 class MapThing{
 private:
-	int x = 0;
-	int y = 0;
+	int x = -mapPixel;
+	int y = -mapPixel;
 	int size = mapPixel;
 	direction dir = UP;
 public:
@@ -25,6 +25,10 @@ public:
 	}
 	direction getDir() {
 		return dir;
+	}
+	void resetPos(){
+		x = -mapPixel;
+		y = -mapPixel;
 	}
 	void setDir(direction direct) {
 		dir = direct;
