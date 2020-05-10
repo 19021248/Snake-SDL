@@ -138,41 +138,35 @@ public:
 						switch (inputDir)
 						{
 						case UP:
-							if (bodyLocation[i].getX() % mapPixel == 0)
-
-								bodyLocation[i].setDir(UP);
+								bodyLocation[0].setDir(UP);
 							break;
 						case DOWN:
-							if (bodyLocation[i].getX() % mapPixel == 0)
-
-								bodyLocation[i].setDir(DOWN);
+								bodyLocation[0].setDir(DOWN);
 							break;
 						case LEFT:
-							if (bodyLocation[i].getY() % mapPixel == 0)
-
-								bodyLocation[i].setDir(LEFT);
+								bodyLocation[0].setDir(LEFT);
 							break;
 						case RIGHT:
-							if (bodyLocation[i].getY() % mapPixel == 0)
-								bodyLocation[i].setDir(RIGHT);
+								bodyLocation[0].setDir(RIGHT);
 							break;
 						default:
 							break;
 						}
+						
 
-						switch (bodyLocation[i].getDir())
+						switch (bodyLocation[0].getDir())
 						{
 						case UP:
-							bodyLocation[i].setY(bodyLocation[0].getY() - size);
+							bodyLocation[0].setY(bodyLocation[0].getY() - size);
 							break;
 						case DOWN:
-							bodyLocation[i].setY(bodyLocation[0].getY() + size);
+							bodyLocation[0].setY(bodyLocation[0].getY() + size);
 							break;
 						case LEFT:
-							bodyLocation[i].setX(bodyLocation[0].getX() - size);
+							bodyLocation[0].setX(bodyLocation[0].getX() - size);
 							break;
 						case RIGHT:
-							bodyLocation[i].setX(bodyLocation[0].getX() + size);
+							bodyLocation[0].setX(bodyLocation[0].getX() + size);
 							break;
 						default:
 							break;
